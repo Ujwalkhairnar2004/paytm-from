@@ -1,25 +1,25 @@
 version: '3.8'
 services:
   from1:
-    image: 5f60e1ec17ae  
+    image: tinu10/from1:latest  
     ports:
       - "80:80"
     deploy:
       replicas: 3
   from2:
-    image: b3856e9d7ea8 
+    image: tinu10/from2:latest
     ports:
       - "81:80"
     deploy:
       replicas: 3
   from3:
-    image: 1ebba2ebb74f
+    image: tinu10/from3:latest
     ports:
       - "82:80"
     deploy:
       replicas: 3
   from4:
-    image:  2caeaedb76a4
+    image: tinu10/from4:latest
     ports:
       - "83:80"
     deploy:
