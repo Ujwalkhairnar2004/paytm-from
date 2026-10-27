@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  from1:
+    image: 5f60e1ec17ae  
+    ports:
+      - "80:80"
+  from2:
+    image: b3856e9d7ea8 
+    ports:
+      - "81:80"
+  from3:
+    image: 1ebba2ebb74f
+    ports:
+      - "82:80"
+  from4:
+    image:  2caeaedb76a4
+    ports:
+      - "83:80"
