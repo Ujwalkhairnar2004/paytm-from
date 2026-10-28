@@ -1,0 +1,50 @@
+This project is parameterized
+Choice Parameter
+Name
+img
+Choices
+from1
+from2
+from3
+from4
+
+Name
+repo
+Choices
+tinu10/from1
+tinu10/from2
+tinu10/from3
+tinu10/from4
+Description
+
+pipeline {
+    agent any
+
+    stages {
+        stage('checkout') {
+            steps {
+                git branch: 'main', url: 'https://github.com/Ujwalkhairnar2004/paytm-from.git'
+            }
+        }
+        stage("build") {
+            steps {
+                sh "docker build -t $img ."
+            }
+        }
+        stage("tag") {
+            steps {
+                sh "docker tag $img $repo "
+            }
+        }
+        stage("login") {
+            steps {
+                sh "docker login -u tinu10 -p $passwd "
+            }
+        }
+        stage("push"){
+            steps {
+                sh "docker push $repo:latest"
+            }
+        }
+    }
+}
